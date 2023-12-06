@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Custom Alert Pop Up Box</title>
+
+<link rel="stylesheet" type="text/css" href="file:///C:/Users/USER/Desktop/Needs/fontawesome-free-6.2.0-web/css/all.css">
+
+
+<style type="text/css">
+	
+* { margin:0;
+    padding:0; }
+
+body  { height:100vh;
+        font-family:"Calibri";
+        background:rgba(225,225,225,1); }
+
+
+.click { position:absolute;
+         top:50%;
+         left:50%;
+         transform:translate(-50%,-50%);
+         background:royalblue;
+         border-radius:3px;
+         padding:10px 20px;
+         color:white;
+         font-size:25px;
+         text-decoration:none;
+         border:2px solid blue; }
+
+
+.popup-box { position:absolute;
+             width:400px;
+             background:white;
+             border-radius:5px;
+             top:50%;
+             left:50%;
+             transform:translate(-50%,-50%);
+             padding:20px 40px;
+             text-align:center;
+             align-items: center;
+             box-shadow:0 0 15px black;
+             display: none;
+             transform:.5s linear; }
+
+.popup-box i { font-size:75px;
+	           font-weight: 900;
+               color:orangered;
+               padding:20px 50px;
+               border-radius: 50%;
+               border:5px solid orangered;
+               margin:-10px 0 20px; }
+
+
+.popup-box h1 { font-size:30px;
+	            font-weight: 600;
+	            margin-bottom: 10px;
+                 }
+
+
+.popup-box p { font-size:20px;
+              font-weight:600px;
+                }
+
+
+.popup-box .btns { margin:30px 0 20px; }
+
+.popup-box .btns a { padding:10px 20px;
+                     border-radius:3px;
+                     text-decoration: none;
+                     background:rgba(125,125,125,1);
+                     color: white;
+                     margin: 0 10px;
+                     border: 2px solid rgba(75,75,75,1);
+                      }
+
+.popup-box .btns a:last-child { background:rgba(255,50,50,1) }
+
+</style>
+
+</head>
+<body>
+
+<a href = "#" class = "click"> Click me </a>
+
+<div class = "popup-box">
+	<i class = "fas fa-exclamation"></i>
+	<h1> Your Account will be deleted permanently!</h1>
+	<label> Are you sure you want to procced.</label>
+	<div class = "btns">
+		<a href = "#" class = "btn1"> Cancel Process </a>
+		<a href = "#" class = "btn2"> Delete Account </a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	
+var btns = document.querySelectorAll(".btns a");
+var click = document.querySelector(".click");
+var box  = document.querySelector(".popup-box");
+
+
+click.onclick = function() { 
+
+box.style.display = "block";
+
+}
+
+btns[0].onclick = function(){
+
+box.style.display = "none";
+
+}
+
+btns[1].onclick = function() {
+box.style.display  = "none";
+alert("Your account has been deleted successfully!")
+
+}
+
+
+</script>
+
+
+</body>
+</html>
